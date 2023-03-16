@@ -49,6 +49,12 @@
 </head>
 <body>
 <h3>Find the mouse by Anuradha Gudimetla</h3>
+<div class="container">
+  <div class="col text-center">
+    <button type="button" class="btn btn-primary" onclick="newGame()">New Game</button>
+  </div>
+</div>
+<br>
 <div class="container-fluid">
     <p class="text-info text-bg-dark">Click on the bushes to search for the mouse, beware the cat</p>
     <p id = "bushes">Number of bushes checked is zero.</p>
@@ -161,6 +167,18 @@
             document.getElementById("penalty").innerHTML="penality is " + penalty;
             lastCheck = position;
         }
+        }
+        function newGame(){
+            mouseLocation = Math.floor(Math.random()*24);
+            console.log(mouseLocation);
+            catLocation = Math.floor(Math.random()*24);
+            console.log(catLocation);
+            document.getElementById("bushes").innerHTML = "Number of bushes checked is 0";
+            document.getElementById("penalty").innerHTML = "Penalty is 0";
+            for(var i=0;i<=23;i++){
+                document.getElementById(ids[i]).src="small-bushe.jpg";
+                
+            }
         }
         function help(){
             
